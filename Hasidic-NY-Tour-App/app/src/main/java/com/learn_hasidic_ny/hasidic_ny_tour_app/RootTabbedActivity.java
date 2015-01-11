@@ -133,8 +133,8 @@ public class RootTabbedActivity extends ActionBarActivity implements ActionBar.T
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            // Show 4 total pages.
+            return 4;
         }
 
         @Override
@@ -142,11 +142,13 @@ public class RootTabbedActivity extends ActionBarActivity implements ActionBar.T
             Locale l = Locale.getDefault();
             switch (position) {
                 case 0:
-                    return getString(R.string.title_section1).toUpperCase(l);
+                    return getString(R.string.tours_tab_label).toUpperCase(l);
                 case 1:
-                    return getString(R.string.title_section2).toUpperCase(l);
+                    return getString(R.string.poi_tab_label).toUpperCase(l);
                 case 2:
-                    return getString(R.string.title_section3).toUpperCase(l);
+                    return getString(R.string.music_tab_label).toUpperCase(l);
+                case 3:
+                    return getString(R.string.more_tab_label).toUpperCase(l);
             }
             return null;
         }
