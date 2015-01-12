@@ -2,8 +2,10 @@
 <resources>
 
     <string name="app_name">Hasidic-NY-Tour-App</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="app_title">Tour Hasidic New York</string>
-
+    <string name="tours_view_title">Tours View</string>
+    <string name="poi_view_title">POI View</string>
+    <string name="music_view_title">Music View</string>
+    <string name="more_view_title">More... View</string>
 </resources>
