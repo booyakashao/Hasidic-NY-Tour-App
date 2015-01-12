@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Learn About Hasidic NY</string>
-    <string name="tours_tab_label">Tours</string>
-    <string name="poi_tab_label">POI</string>
-    <string name="music_tab_label">Music</string>
-    <string name="more_tab_label">More</string>
+    <string name="app_name">Hasidic-NY-Tour-App</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="tour_tab_title">Tour Tab Title</string>
-    <string name="poi_tab_title">POI Tab Title</string>
-    <string name="music_tab_title">Music Tab Title</string>
-    <string name="more_tab_title">More Tab Title</string>
 
 </resources>
