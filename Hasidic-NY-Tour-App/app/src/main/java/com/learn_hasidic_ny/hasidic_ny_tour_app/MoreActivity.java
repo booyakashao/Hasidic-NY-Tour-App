@@ -19,6 +19,8 @@ public class MoreActivity extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return (LinearLayout) inflater.inflate(R.layout.more_layout, container, false);
+        View viewRoot = inflater.inflate(R.layout.more_layout, container, false);
+
+        return viewRoot;
     }
 }

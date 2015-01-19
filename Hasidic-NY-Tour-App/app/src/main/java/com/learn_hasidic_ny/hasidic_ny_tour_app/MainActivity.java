@@ -1,13 +1,11 @@
 package com.learn_hasidic_ny.hasidic_ny_tour_app;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TabHost;
 
 

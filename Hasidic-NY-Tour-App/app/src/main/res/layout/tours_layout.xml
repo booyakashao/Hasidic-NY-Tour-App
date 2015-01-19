@@ -8,6 +8,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/poi_view_title"
+        android:text="@string/tours_view_title"
         android:id="@+id/tours_title_text_view" />
+
+
 </LinearLayout>
