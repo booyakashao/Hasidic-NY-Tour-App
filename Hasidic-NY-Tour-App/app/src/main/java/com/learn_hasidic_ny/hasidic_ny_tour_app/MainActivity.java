@@ -1,15 +1,11 @@
 package com.learn_hasidic_ny.hasidic_ny_tour_app;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TabHost;
-
 
 public class MainActivity extends FragmentActivity {
 
@@ -33,22 +29,18 @@ public class MainActivity extends FragmentActivity {
         //==============Linear and lazy addition of tab spec=================
         TabHost.TabSpec localTabSpec = tabbedNavigationControl.newTabSpec("Tours_Tab");
         localTabSpec.setIndicator(toursTabTitle, null);
-        Intent toursIntent = new Intent(this, ToursActivity.class);
         tabbedNavigationControl.addTab(localTabSpec, ToursActivity.class, null);
 
         localTabSpec = tabbedNavigationControl.newTabSpec("POI_Tab");
         localTabSpec.setIndicator(poiTabTitle, null);
-        Intent poiIntent = new Intent(this, POIActivity.class);
         tabbedNavigationControl.addTab(localTabSpec, POIActivity.class, null);
 
         localTabSpec = tabbedNavigationControl.newTabSpec("Music_Tab");
         localTabSpec.setIndicator(musicTabTitle, null);
-        Intent musicIntent = new Intent(this, MusicActivity.class);
         tabbedNavigationControl.addTab(localTabSpec, MusicActivity.class, null);
 
         localTabSpec = tabbedNavigationControl.newTabSpec("More_Tab");
         localTabSpec.setIndicator(moreTabTitle, null);
-        Intent moreIntent = new Intent(this, MoreActivity.class);
         tabbedNavigationControl.addTab(localTabSpec, MoreActivity.class, null);
         //===================================================================
 
