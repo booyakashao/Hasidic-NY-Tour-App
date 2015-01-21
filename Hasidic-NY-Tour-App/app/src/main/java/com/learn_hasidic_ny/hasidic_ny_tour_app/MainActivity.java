@@ -1,11 +1,15 @@
 package com.learn_hasidic_ny.hasidic_ny_tour_app;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TabHost;
+import android.widget.Toast;
+
+import static android.widget.Toast.makeText;
 
 public class MainActivity extends FragmentActivity {
 
@@ -45,6 +49,7 @@ public class MainActivity extends FragmentActivity {
         //===================================================================
 
 
+
     }
 
 
@@ -64,7 +69,39 @@ public class MainActivity extends FragmentActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Toast toast = makeText(this, "You have selected an action setting", Toast.LENGTH_LONG);
+            toast.show();
             return true;
+        }
+
+        if (id == R.id.fillDB) {
+            Toast toast = makeText(this, "Populated DB", Toast.LENGTH_LONG);
+            toast.show();
+
+            SQLiteDatabase toursDB = getBaseContext().openOrCreateDatabase("toursDB.db", MODE_PRIVATE, null);
+
+            toursDB.execSQL("CREATE TABLE tourGuides (id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    "first_name TEXT, " +
+                    "last_name TEXT," +
+                    "email TEXT," +
+                    "description BLOB);");
+            toursDB.execSQL("INSERT INTO tourGuides (first_name, last_name, email, description) values(" +
+                    "'Jacob'," +
+                    "'Gluck'," +
+                    "'Jacob@HasidicWilliamsburgTour.com'," +
+                    "'This is where the description for jacob would go.');");
+            toursDB.execSQL("INSERT INTO tourGuides (first_name, last_name, email, description) values(" +
+                    "'Frieda'," +
+                    "'Vizel'," +
+                    "'Frieda.Vizel@HasidicWilliamsburgTour.com'," +
+                    "'This is where the description for Frieda would go.');");
+            toursDB.close();
+            return true;
+        }
+        if (id == R.id.clearDB) {
+            SQLiteDatabase toursDB = getBaseContext().openOrCreateDatabase("toursDB.db", MODE_PRIVATE, null);
+            toursDB.execSQL("DROP TABLE tourGuides;");
+            toursDB.close();
         }
 
         return super.onOptionsItemSelected(item);
