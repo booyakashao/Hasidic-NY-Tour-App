@@ -1,9 +1,12 @@
 package org.example.wengu.sqlitetest1;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -12,6 +15,25 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SQLiteDatabase sqliteDatabase = getBaseContext().openOrCreateDatabase("sqlite-test-1.db", MODE_PRIVATE, null);
+        sqliteDatabase.execSQL("DROP TABLE contacts;");
+        sqliteDatabase.execSQL("CREATE TABLE contacts(name TEXT, phone INTEGER, email TEXT);");
+        sqliteDatabase.execSQL("INSERT INTO contacts VALUES('Wen', 123456,'wen@ownits.com');");
+        sqliteDatabase.execSQL("INSERT INTO contacts VALUES('Fred', 12345,'fred@nurk.com');");
+
+        Cursor query = sqliteDatabase.rawQuery("SELECT * FROM contacts", null);
+        if(query.moveToFirst()) {
+            do {
+                // Cycle through all records
+                String name = query.getString(0);
+                int phone = query.getInt(1);
+                String email = query.getString(2);
+                Toast.makeText(getBaseContext(), "Name = " + name + " phone = " + phone + " email = " + email, Toast.LENGTH_LONG).show();
+            } while (query.moveToNext());
+        } else {
+            Toast.makeText(getBaseContext(), "Error retrieving data", Toast.LENGTH_LONG).show();
+        }
+        sqliteDatabase.close();
     }
 
 
