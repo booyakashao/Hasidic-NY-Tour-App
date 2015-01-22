@@ -1,9 +1,12 @@
 package com.learn_hasidic_ny.tours_fragments;
 
+import android.support.v4.app.FragmentTransaction;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +17,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.learn_hasidic_ny.db_objects.TourGuide;
+import com.learn_hasidic_ny.hasidic_ny_tour_app.EmptyActivity;
+import com.learn_hasidic_ny.hasidic_ny_tour_app.POIActivity;
 import com.learn_hasidic_ny.hasidic_ny_tour_app.R;
 
 /**
  * Created by wengu on 1/19/15.
  */
 public class GuidedToursFragment extends Fragment {
+
+    Fragment fr;
+    FragmentManager fm;
+    FragmentTransaction fragmentTransaction;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,7 +37,8 @@ public class GuidedToursFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View viewRoot = inflater.inflate(R.layout.tour_guided_layout, container, false);
+        final View viewRoot = inflater.inflate(R.layout.tour_guided_layout, container, false);
+        viewRoot.setId(View.generateViewId());
 
         LinearLayout mainLayout = (LinearLayout) viewRoot.findViewById(R.id.mainLinearLayout);
 
@@ -50,6 +60,7 @@ public class GuidedToursFragment extends Fragment {
                 RelativeLayout.LayoutParams relativeLayoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
                 currentRelativeLayout.setLayoutParams(relativeLayoutParams);
                 currentRelativeLayout.setMinimumHeight(50);
+                currentRelativeLayout.setClickable(true);
 
                 ImageView currentPicture = new ImageView(viewRoot.getContext());
                 currentPicture.setId(View.generateViewId());
@@ -61,7 +72,7 @@ public class GuidedToursFragment extends Fragment {
 
                 currentRelativeLayout.addView(currentPicture, pictureViewParams);
 
-                TextView nameTextView = new TextView(viewRoot.getContext());
+                final TextView nameTextView = new TextView(viewRoot.getContext());
                 nameTextView.setText(currentTourGuide.getFirst_name() + " " + currentTourGuide.getLast_name());
                 nameTextView.setId(View.generateViewId());
                 RelativeLayout.LayoutParams nameTextViewParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
@@ -82,6 +93,26 @@ public class GuidedToursFragment extends Fragment {
                 descriptionTextView.setTextAppearance(viewRoot.getContext(), android.R.style.TextAppearance_Small);
 
                 currentRelativeLayout.addView(descriptionTextView, descriptionTextViewParams);
+
+                currentRelativeLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast tourGuideToast = Toast.makeText(v.getContext(), "You have clicked on Tour Guide " + nameTextView.getText(), Toast.LENGTH_SHORT);
+                        tourGuideToast.show();
+
+                        /*
+                        View newView = (View) viewRoot.getParent();
+
+                        newView.inflate(newView.getContext(), R.layout.empty_activity_layout, (ViewGroup) newView.getParent());
+                        */
+
+                        fr = new EmptyActivity();
+                        fm = getFragmentManager();
+                        fragmentTransaction = fm.beginTransaction();
+                        fragmentTransaction.replace(viewRoot.getId(), fr);
+                        fragmentTransaction.commit();
+                    }
+                });
 
                 mainLayout.addView(currentRelativeLayout);
 
