@@ -28,7 +28,7 @@ public class GuidedToursFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View viewRoot = inflater.inflate(R.layout.tour_guided_layout_temp, container, false);
+        View viewRoot = inflater.inflate(R.layout.tour_guided_layout, container, false);
 
         LinearLayout mainLayout = (LinearLayout) viewRoot.findViewById(R.id.mainLinearLayout);
 
