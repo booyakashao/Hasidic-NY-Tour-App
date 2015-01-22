@@ -86,15 +86,22 @@ public class MainActivity extends FragmentActivity {
                     "email TEXT," +
                     "description BLOB);");
             toursDB.execSQL("INSERT INTO tourGuides (first_name, last_name, email, description) values(" +
+                    "'Frieda'," +
+                    "'Vizel'," +
+                    "'Frieda.Vizel@HasidicWilliamsburgTour.com'," +
+                    "'This is where the description for Frieda would go.');");
+            toursDB.execSQL("INSERT INTO tourGuides (first_name, last_name, email, description) values(" +
                     "'Jacob'," +
                     "'Gluck'," +
                     "'Jacob@HasidicWilliamsburgTour.com'," +
                     "'This is where the description for jacob would go.');");
             toursDB.execSQL("INSERT INTO tourGuides (first_name, last_name, email, description) values(" +
-                    "'Frieda'," +
-                    "'Vizel'," +
-                    "'Frieda.Vizel@HasidicWilliamsburgTour.com'," +
-                    "'This is where the description for Frieda would go.');");
+                    "'Faigy'," +
+                    "'Mayer'," +
+                    "'faigy.mayer@mayer.com'," +
+                    "'This is where the description would go." +
+                    "Filler Text. Filler Text. Filler Text. Filler Text." +
+                    "Filler Text. Filler Text. Filler Text. Filler Text.');");
             toursDB.close();
             return true;
         }
