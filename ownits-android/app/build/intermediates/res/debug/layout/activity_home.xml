@@ -1,0 +1,5 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/main_fragment_container" 
+	android:layout_width="match_parent"
+	android:layout_height="fill_parent" >
+</FrameLayout><!-- From: file:/Users/wengu/Documents/workspace/Hasidic-NY-App/ownits-android/app/src/main/res/layout/activity_home.xml -->

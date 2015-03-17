@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/snapshot_video_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/snapshot"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/sample_snapshot" />
+
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_alignBottom="@+id/snapshot"
+            android:layout_alignParentLeft="true"
+            android:contentDescription="usericon"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon2" />
+
+        <ImageView
+            android:id="@+id/play_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_alignBottom="@+id/snapshot"
+            android:layout_alignParentRight="true"
+            android:contentDescription="usericon"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon4" />
+        
+        
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_alignBottom="@+id/user_icon"
+            android:layout_toRightOf="@+id/user_icon"
+            android:layout_toLeftOf="@+id/play_icon"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:textColor="#EEEEEE"
+            android:text="USER" />
+
+        <TextView
+            android:id="@+id/category_text"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_above="@+id/user_name"
+            android:layout_alignStart="@+id/user_name"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#AAAAAA"
+            android:text="COMPETING:" />
+
+        <TextView
+            android:id="@+id/category_type"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignEnd="@+id/user_name"
+            android:layout_alignTop="@+id/category_text"
+            android:layout_alignBottom="@+id/category_text"
+            android:layout_toRightOf="@+id/category_text"
+            android:layout_marginLeft="5dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#fff508"
+            android:text="own/fail" />
+        
+        <ImageView
+            android:id="@+id/spot_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/snapshot"
+            android:layout_alignParentLeft="true"
+            android:contentDescription="usericon"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon2" />
+        
+        <Button
+            android:id="@+id/like_btn"
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/snapshot"
+            android:layout_alignParentRight="true"
+            android:text="ME LIKEY!"
+            android:drawableLeft="@drawable/icon2"
+            android:drawablePadding="5dp"/>
+            <!-- android:background="?android:attr/selectableItemBackground"/> 
+            Create custom selectors for this to similate selectableItemBackground to support backwards compatibility
+            http://stackoverflow.com/questions/8855791/how-to-create-standard-borderless-buttons-like-in-the-design-guidline-mentioned
+            not accepted answer next one-->
+        
+        <TextView 
+            android:id="@+id/spot_name_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/spot_icon"
+            android:layout_toLeftOf="@+id/like_btn"
+            android:layout_below="@+id/snapshot"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="15dp"
+            android:text="SPOT NAME"/>
+        
+        <TextView
+            android:id="@+id/spot_location_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/spot_name_text"
+            android:layout_alignRight="@+id/spot_name_text"
+            android:layout_below="@+id/spot_name_text"
+            android:layout_marginBottom="10dp"
+            android:textSize="10dp"
+            android:text="New York, NY"/>
+
+</RelativeLayout>
+

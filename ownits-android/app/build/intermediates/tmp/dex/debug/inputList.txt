@@ -1,0 +1,5 @@
+/Users/wengu/Documents/workspace/Hasidic-NY-App/ownits-android/app/build/intermediates/classes/debug
+/Users/wengu/Documents/workspace/Hasidic-NY-App/ownits-android/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-7035136020afb9dc02632e93b51a3d7c50d0cf9c.jar
+/Users/wengu/Documents/workspace/Hasidic-NY-App/ownits-android/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-5ac4ca90c5bf3943aa1bc17c954a8da50aa01647.jar
+/Users/wengu/Documents/workspace/Hasidic-NY-App/ownits-android/app/build/intermediates/pre-dexed/debug/classes-8f92ea66da8dd05e5b720d5d135b82942bdca3b1.jar
+/Users/wengu/Documents/workspace/Hasidic-NY-App/ownits-android/app/build/intermediates/pre-dexed/debug/classes-8777edb639f038005fcb645ef2ce5dda000f6c6e.jar

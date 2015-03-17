@@ -1,0 +1,5 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">    
+	<item	android:state_pressed="true"     	  
+			android:drawable="@drawable/menu_item_pressed" />
+	<item android:drawable="@drawable/menu_item_bg" />
+</selector><!-- From: file:/Users/wengu/Documents/workspace/Hasidic-NY-App/ownits-android/app/src/main/res/drawable/custom_menu_selector.xml -->
